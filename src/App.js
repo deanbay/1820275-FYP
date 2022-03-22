@@ -27,6 +27,8 @@ function App() {
       </Router>
     </>
   );
+
+  //const auth =firebase.auth();
 }
 export default App;
 
