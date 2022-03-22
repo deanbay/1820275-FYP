@@ -1,0 +1,2 @@
+- Link front end to firebase NO.1 priority
+- Find a way to further connect DB 
