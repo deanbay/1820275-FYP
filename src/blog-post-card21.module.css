@@ -1,0 +1,42 @@
+.BlogPostCard {
+  width: 100%;
+  display: flex;
+  max-width: 1400px;
+  box-shadow: 4px 4px 10px 0px rgba(18, 18, 18, 0.1);
+  transition: 0.3s;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.BlogPostCard:hover {
+  transform: scale(1.02);
+}
+.container {
+  width: 1190px;
+  height: 354px;
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  flex-direction: column;
+  padding-bottom: 32px;
+  justify-content: center;
+}
+.image {
+  width: 494px;
+  height: 332px;
+  object-fit: cover;
+}
+
+@media(max-width: 991px) {
+  .BlogPostCard {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media(max-width: 767px) {
+  .BlogPostCard {
+    flex-direction: column;
+  }
+}
