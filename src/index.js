@@ -42,6 +42,18 @@ async function getCities(db) {
 
 console.log(getCities(db))
 
+//detect auth state
+auth.onAuthStateChanged(user => {
+
+});
+onAuthStateChanged(auth, user => {
+  if (user != null){
+    console.log('Logged In!');
+  } else{
+    console.log('No user');
+  }
+});
+
 
 // db.collection('todos').getDocs();
 // const todosCol = collection(db, 'todos'); 
