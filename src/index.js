@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {initializeApp} from 'firebase/app'
-import { getAuth, onAuthStateChanged} from 'firebase/auth' ;
+import { getAuth, onAuthStateChanged,signOut, signInWithPopup, GoogleAuthProvider} from 'firebase/auth' ;
 import { getDocs, collection, getFirestore} from 'firebase/firestore' ;
 
 import { BrowserRouter } from "react-router-dom";
@@ -31,13 +31,15 @@ const firebaseApp = initializeApp({
 
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
+const provider = new GoogleAuthProvider();
+
 
 async function getCities(db) {
-  const citiesCol = collection(db, 'todos');
-  const citySnapshot = await getDocs(citiesCol);
-  const cityList = citySnapshot.docs.map(doc => doc.data());
-  console.log({cityList})
-  return cityList;
+  const ExampleCol = collection(db, 'todos');
+  const ExampleSnapshot = await getDocs(ExampleCol);
+  const ExampleList = ExampleSnapshot.docs.map(doc => doc.data());
+  console.log({cityList: ExampleList})
+  return ExampleList;
 }
 
 console.log(getCities(db))
