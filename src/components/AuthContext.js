@@ -3,7 +3,7 @@ import { auth } from "../firebase"
 
 const AuthContext = React.createContext()
 
-export function useAuth() {
+export function useAuth() { //using auth context
   return useContext(AuthContext)
 }
 
@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
     return currentUser.updatePassword(password)
   }
 
-  useEffect(() => {
+  useEffect(() => { //using when mounting components
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
       setLoading(false)
@@ -55,7 +55,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={value}> value has all info of user
       {!loading && children}
     </AuthContext.Provider>
   )

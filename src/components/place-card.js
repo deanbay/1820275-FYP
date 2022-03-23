@@ -26,9 +26,7 @@ const PlaceCard = (props) => {
 }
 
 PlaceCard.defaultProps = {
-  image:
-    'https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000',
-  image_alt: 'image',
+image_alt: 'image',
   Idea_name: 'Idea Name',
   rootClassName: '',
   description: 'Description of busines idea',

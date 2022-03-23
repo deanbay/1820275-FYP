@@ -1,2 +1,4 @@
 - Link front end to firebase NO.1 priority
 - Find a way to further connect DB  
+
+- GETTING a DATABASE Structerd, what do i need to store, have ideas and How am i going to store the ideas

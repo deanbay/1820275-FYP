@@ -1,8 +1,13 @@
 import firebase from "firebase/app"
 import "firebase/auth"
 
-//const firebaseConfig = 
+//react-google-login
+//www.npmjs.com/package/react-google-login
+z//anthonyjgrove.github.io/react-google-login/?path=/info/google-login-button--default-button
+
+// const firebaseConfig = 
 const firebaseApp = initializeApp({
+    databaseURL: "fyp1-78231 europe-west6.firebasedatabase.app", 
     apiKey: "AIzaSyAA9xr8geeF9PVznNk-9CoVWO21p78gYyw",
     authDomain: "fyp1-78231.firebaseapp.com",
     projectId: "fyp1-78231",
@@ -17,8 +22,8 @@ const firebaseApp = initializeApp({
   const auth = getAuth(firebaseApp);
   const db = getFirestore(firebaseApp);
   
-  async function getCities(db) {
-    const ExampleCol = collection(db, 'todos');
+  export default async function getCities(db) {
+    const ExampleCol = collection(db, 'Users');
     const ExampleSnapshot = await getDocs(ExampleCol);
     const ExampleList = ExampleSnapshot.docs.map(doc => doc.data());
     console.log({cityList: ExampleList})

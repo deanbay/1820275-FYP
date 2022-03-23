@@ -9,9 +9,39 @@ import PlaceCard from './components/place-card'
 import projectStyles from './components/style.module.css'
 import styles from './landing-page1.module.css'
 
-//import LandingPage1 from './landing-page1' //where i left off with the Kaizo
 
+import { db } from './App'
+import { setDoc, doc, getDoc } from "firebase/firestore";
+
+
+
+var SHA256 = require("crypto-js/sha256");
 const LandingPage1 = (props) => {
+
+  const [Email, updateFormEmail] = React.useState("");
+  const [Password, updateFormPassword] = React.useState(""); //react shecudles updates and bundle for efficeny,  
+
+  const signup = async function (email, password) {
+
+    const docRef = doc(db, "Users", email);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("User exists already:"); 
+    } else {
+
+      // Add a new document in collection "USERS"
+      await setDoc(doc(db, "Users", email), {
+        Username: email,
+        EncrytedPassword: SHA256(password).toString(),
+        incorrectCountNumb: 0,
+        lastAttemptTime: Date.now() 
+      });
+      console.log("User created");
+    }
+
+  }
+
   return (
     <div className={styles['container']}>
       <Helmet>
@@ -55,15 +85,20 @@ const LandingPage1 = (props) => {
               type="text"
               placeholder="Email"
               className={` ${styles['textinput']} ${projectStyles['input']} `}
+
+              value={Email} onChange={(e) => updateFormEmail(e.target.value)} //onputs 
             />
             <span className={styles['text09']}>Password</span>
             <input
-              type="text"
+              type="password"
               placeholder="Password"
               className={` ${styles['textinput1']} ${projectStyles['input']} `}
+              value={Password} onChange={(e) => updateFormPassword(e.target.value)}
+
             />
             <button
               className={` ${styles['button']} ${projectStyles['button']} `}
+              onClick={() => signup(Email, Password)}      // creating method that takes in 0 arguments, thats why we got empty brackets
             >
               Button
             </button>
