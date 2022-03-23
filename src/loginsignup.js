@@ -76,7 +76,7 @@ const Loginsignup = (props) => {
       <div id="main-section" className={styles['Main']}>
         <div className={styles['Blog']}>
 
-          <div className={styles['container3']}></div>
+          {/* <div className={styles['container3']}></div> */}
           <div className={` ${styles['Sign-up']} ${projectStyles['button']} `}>
             <h1>LOG IN!</h1>
             <span className={styles['text08']}>Email address</span>
@@ -110,45 +110,7 @@ const Loginsignup = (props) => {
             <h1 className={styles['Logo1']}>Ideally</h1>
           </a>
           <div className={styles['Links-container1']}>
-            <div className={styles['container4']}>
-              <a
-                href="https://example.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={styles['link03']}
-              >
-                Ethos
-              </a>
-              <a
-                href="https://example.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={styles['link04']}
-              >
-                <span>aims and goals</span>
-              </a>
-              <a
-                href="https://example.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={styles['link05']}
-              >
-                Special deals
-              </a>
-              <a
-                href="https://example.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={styles['Link06']}
-              >
-                Summer holiday
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
-              </a>
-            </div>
+            
             <div className={styles['container5']}>
               <a
                 href="https://example.com"
