@@ -5,8 +5,10 @@ import { Helmet } from 'react-helmet'
 
 import SolidButton from './components/solid-button';
 import NavigationLinks6 from './components/navigation-links6';
-import BlogPostCard2 from './/blog-post-card2';
+import IdeaCard from './blog-post-card2';
 import styles from './ideapage.module.css';
+import IdeaArea from './components/idea-area'
+
 
 const Ideapage = (props) => {
   return (
@@ -16,19 +18,21 @@ const Ideapage = (props) => {
         <meta property="og:title" content="Idea page - Idealy" />
       </Helmet>
       <div id="main-section" className={styles['Main']}>
-        <div className={styles['Blog']}>
+        <div className={styles['Idea']}>
           <div className={styles['container3']}>
-            <BlogPostCard2
+            <IdeaCard
               profile_src="https://images.unsplash.com/photo-1611232658409-0d98127f237f?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIzfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTYyNjQ1MDU4MQ&amp;ixlib=rb-1.2.1&amp;h=1200"
               rootClassName="rootClassName3"
-            ></BlogPostCard2>
+            ></IdeaCard> 
+              <div className="ideapage-user-input-area">
+          <IdeaArea rootClassName="rootClassName"></IdeaArea> 
+         </div>
+
           </div>
-          <div className={styles['container3']}>
-            <BlogPostCard2 rootClassName="rootClassName"></BlogPostCard2>
-          </div>
-          <div className={styles['container3']}>
-            <BlogPostCard2 rootClassName="rootClassName"></BlogPostCard2>
-          </div>
+
+          {/*  work on this area 👇*/}
+       
+
         </div>
       </div>
       <div id="footer" className={styles['Footer']}>

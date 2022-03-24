@@ -3,8 +3,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './blog-post-card2.module.css'
+import SolidButton from './components/solid-button'
 
-const BlogPostCard2 = (props) => {
+
+
+const IdeaCard = (props) => {
   return (
     <div
       className={` ${styles['BlogPostCard']} ${styles[props.rootClassName]} `}
@@ -25,26 +28,30 @@ const BlogPostCard2 = (props) => {
           <div className={styles['Profile']}>
             <span className={styles['text4']}>{props.author}</span>
           </div>
-          <span className={styles['text5']}>Read More -&gt;</span>
         </div>
+        <SolidButton
+          rootClassName="rootClassName26"
+          button="Start Collaborate"
+          className=""
+        ></SolidButton>
       </div>
     </div>
   )
 }
 
-BlogPostCard2.defaultProps = {
-  title: 'Lorem ipsum dolor sit amet',
+IdeaCard.defaultProps = {
+  title: 'Title Idea',
   image_alt: 'image',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non volutpat turpis. Mauris luctus rutrum mi ut rhoncus. Integer in dignissim tortor. Lorem ipsum dolor sit amet, consectetur adipiscing ...',
-  author: 'Bryan',
-  when: '3 days ago',
-  label: 'ENTERPRISE',
+  author: 'Joe Blogs',
+  when: 'X days ago created',
+  label: 'Business name',
   image_src: '/playground_assets/brain%20drawing-400w.jpg',
   rootClassName: '',
 }
 
-BlogPostCard2.propTypes = {
+IdeaCard.propTypes = {
   title: PropTypes.string,
   image_alt: PropTypes.string,
   description: PropTypes.string,
@@ -55,4 +62,4 @@ BlogPostCard2.propTypes = {
   rootClassName: PropTypes.string,
 }
 
-export default BlogPostCard2
+export default IdeaCard

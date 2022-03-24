@@ -29,7 +29,7 @@ PlaceCard.defaultProps = {
 image_alt: 'image',
   Idea_name: 'Idea Name',
   rootClassName: '',
-  description: 'Description of busines idea',
+  description: 'Description of business idea',
 }
 
 PlaceCard.propTypes = {

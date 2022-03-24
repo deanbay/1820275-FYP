@@ -7,11 +7,11 @@ import {initializeApp} from 'firebase/app'
 import { getAuth, onAuthStateChanged} from 'firebase/auth' ;
 import { getDocs, collection, getFirestore} from 'firebase/firestore' ;
 
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 
 
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
-import styles from './ideapage.module.css';
+// import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+// import styles from './ideapage.module.css';
 
 
 //const firebaseConfig = 
@@ -27,30 +27,30 @@ const firebaseApp = initializeApp({
 
 
 
-// const auth = getAuth(firebaseApp);
-// const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
 
-// async function getCities(db) {
-//   const citiesCol = collection(db, 'todos');
-//   const citySnapshot = await getDocs(citiesCol);
-//   const cityList = citySnapshot.docs.map(doc => doc.data());
-//   console.log({cityList})
-//   return cityList;
-// }
+async function getCities(db) {
+  const citiesCol = collection(db, 'todos');
+  const citySnapshot = await getDocs(citiesCol);
+  const cityList = citySnapshot.docs.map(doc => doc.data());
+  console.log({cityList})
+  return cityList;
+}
 
-// console.log(getCities(db))
+console.log(getCities(db))
 
-// //detect auth state
-// auth.onAuthStateChanged(user => {
+//detect auth state
+auth.onAuthStateChanged(user => {
 
-// });
-// onAuthStateChanged(auth, user => {
-//   if (user != null){
-//     console.log('Logged In!');
-//   } else{
-//     console.log('No user');
-//   }
-// });
+});
+onAuthStateChanged(auth, user => {
+  if (user != null){
+    console.log('Logged In!');
+  } else{
+    console.log('No user');
+  }
+});
 
 
 // db.collection('todos').getDocs();

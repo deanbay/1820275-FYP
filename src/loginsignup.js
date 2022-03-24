@@ -38,8 +38,7 @@ const Loginsignup = (props) => {
       console.log (data)
    
       console.log(SHA256 (password))
-      if (data.EncryptedPassword === SHA256(password).toString() &&
-        (data.incorrectCountNumb < 3 || data.incorrectCountNumb >= 3 && getDate5MinsAgo().after(data.lastAttemptTime))) {
+      if (data.EncryptedPassword === SHA256(password).toString() && (data.incorrectCountNumb < 3 || data.incorrectCountNumb >= 3 && getDate5MinsAgo().after(data.lastAttemptTime))) {
         setDoc(docRef, {
           incorrectCountNumb: 0,
           lastAttemptTime: Date.now()

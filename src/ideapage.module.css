@@ -159,9 +159,9 @@
   padding-bottom: var(--dl-space-space-quadruple);
   justify-content: flex-start;
 }
-.Blog {
+.Idea {
   width: 1068px;
-  /* height: 693px; */
+  height: 693px;
   display: flex;
   padding: 48px;
   max-width: 1400px;

@@ -127,30 +127,7 @@ const LandingPage1 = (props) => {
             Idea_name="survey testing"
             description="testing a survey before genral release to public"
           ></PlaceCard>
-          <PlaceCard
-            image="https://images.unsplash.com/photo-1618060932014-4deda4932554?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDI0fHxjeWJlcnxlbnwwfHx8fDE2Mzk0ODY5NDU&amp;ixlib=rb-1.2.1&amp;w=300"
-            Idea_name="Paris"
-          ></PlaceCard>
-          <PlaceCard
-            image="https://images.unsplash.com/photo-1551634979-2b11f8c946fe?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;h=1000"
-            Idea_name="Paris"
-          ></PlaceCard>
-          <PlaceCard
-            image="https://images.unsplash.com/photo-1585211969224-3e992986159d?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;h=1000"
-            Idea_name="Amsterdam"
-          ></PlaceCard>
-          <PlaceCard
-            image="https://images.unsplash.com/photo-1585211969224-3e992986159d?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;h=1000"
-            Idea_name="Amsterdam"
-          ></PlaceCard>
-          <PlaceCard
-            image="https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;h=1000"
-            Idea_name="Barcelona"
-          ></PlaceCard>
-          <PlaceCard
-            image="https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;h=1000"
-            Idea_name="Barcelona"
-          ></PlaceCard>
+   
         </div>
       </div>
       <div className={styles['Footer']}>
