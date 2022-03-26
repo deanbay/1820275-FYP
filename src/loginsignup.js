@@ -23,33 +23,39 @@ const Loginsignup = (props) => {
   const getDate5MinsAgo = () => {
     const minutesToSubtract = 5;
     const currentDate = new Date();
-    const futureDate = new Date(currentDate.getTime() - minutesToSubtract * 60000);
+    const futureDate = new Date(currentDate.getTime() - minutesToSubtract*60000);
     return futureDate;
-  }
+    }
 
-  const login = async function (email, password) {
-    const docRef = doc(db, "Users", email);
+  const login = async function (Username, password) {
+    const docRef = doc(db, "Users", Username);
     const docSnap = await getDoc(docRef);
 
-
-    console.log(SHA256 ("Message").toString())
+    console.log(Username.toString())
+    console.log(SHA256 (password).toString())
     if (docSnap.exists()) {
       const data = docSnap.data();
-      console.log (data)
-   
-      console.log(SHA256 (password))
-      if (data.EncryptedPassword === SHA256(password).toString() && (data.incorrectCountNumb < 3 || data.incorrectCountNumb >= 3 && getDate5MinsAgo().after(data.lastAttemptTime))) {
+      // console.log (data)                 testing 
+      // console.log((Username).toString()) testing 
+      // console.log(SHA256 (password).toString()) testing
+
+      console.log({"usernameCheck": Username === data.Username, "passwordCheck": data.EncryptedPassword === SHA256(password).toString(), "incorrectCountNumbLT3": data.incorrectCountNumb < 3, "incorrectCountNUmbGT3AndLastAttemptLongerThan5minsago": data.incorrectCountNumb >= 3 && getDate5MinsAgo() > new Date(data.lastAttemptTime) })
+
+      if ( Username === data.Username  && data.EncryptedPassword === SHA256(password).toString() && (data.incorrectCountNumb < 3 || data.incorrectCountNumb >= 3 && getDate5MinsAgo() > new Date(data.lastAttemptTime))) {
         setDoc(docRef, {
           incorrectCountNumb: 0,
+         // CorrectLog: + 1,
           lastAttemptTime: Date.now()
         },
           { merge: true }
         );
         console.log("Logged in!");
-    } else {
+    } 
+    else {
         // potentially could update a count variable for this user. if user has 3 incorrect attempts, don't allow for 30mins
         setDoc(docRef, {
-          incorrectCountNumb: data.incorrectCountNumb + 1,
+          
+          incorrectCountNumb: data.incorrectCountNumb+1,
           lastAttemptTime: Date.now()
         },
           { merge: true }

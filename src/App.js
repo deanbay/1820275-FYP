@@ -7,6 +7,7 @@ import Header from './components/Header'
 import { initializeApp, getApp } from 'firebase/app'
 import { getFirestore,collection,getDocs } from 'firebase/firestore'
 import Loginsignup from './loginsignup';
+import Footer from './components/Footer';
 
 
 
@@ -59,6 +60,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Footer></Footer>
       </Router>
     </>
   );
