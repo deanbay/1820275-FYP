@@ -1,24 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import { Helmet } from 'react-helmet'
-
 import SolidButton from './components/solid-button'
 import PlaceCard from './components/place-card'
 import projectStyles from './components/style.module.css'
 import styles from './landing-page1.module.css'
 
-
 import { db } from './App'
 import { setDoc, doc, getDoc } from "firebase/firestore";
-
-
 
 var SHA256 = require("crypto-js/sha256");
 const LandingPage1 = (props) => {
 
   const [Email, updateFormEmail] = React.useState("");
-  const [Password, updateFormPassword] = React.useState(""); //react shecudles updates and bundle for efficeny,  
+  const [Password, updateFormPassword] = React.useState(""); //react schedules updates and bundle for efficiency,  
 
   const signup = async function (email, password) {
 
@@ -28,7 +23,6 @@ const LandingPage1 = (props) => {
     if (docSnap.exists()) {
       console.log("User exists already:"); 
     } else {
-
       // Add a new document in collection "USERS"
       await setDoc(doc(db, "Users", email), {
         Username: email,
@@ -38,9 +32,7 @@ const LandingPage1 = (props) => {
       });
       console.log("User created");
     }
-
   }
-
   return (
     <div className={styles['container']}>
       <Helmet>
@@ -85,21 +77,20 @@ const LandingPage1 = (props) => {
               placeholder="Email"
               className={` ${styles['textinput']} ${projectStyles['input']} `}
 
-              value={Email} onChange={(e) => updateFormEmail(e.target.value)} //onputs 
+              value={Email} onChange={(e) => updateFormEmail(e.target.value)} //outputs 
             />
             <span className={styles['text09']}>Password</span>
             <input
               type="password"
               placeholder="Password"
               className={` ${styles['textinput1']} ${projectStyles['input']} `}
-              value={Password} onChange={(e) => updateFormPassword(e.target.value)}
+              value={Password} onChange={(e) => updateFormPassword(e.target.value)}//outputs
 
             />
             <button
               className={` ${styles['button']} ${projectStyles['button']} `}
-              onClick={() => signup(Email, Password)}      // creating method that takes in 0 arguments, thats why we got empty brackets
-            >
-              Button
+              onClick={() => signup(Email, Password)}  // 
+            > sign up
             </button>
           </div>
         </div>

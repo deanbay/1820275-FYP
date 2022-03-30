@@ -23,7 +23,7 @@ const Loginsignup = (props) => {
   const getDate5MinsAgo = () => {
     const minutesToSubtract = 5;
     const currentDate = new Date();
-    const futureDate = new Date(currentDate.getTime() - minutesToSubtract*60000);
+    const futureDate = new Date(currentDate.getTime() - minutesToSubtract*60000); //
     return futureDate;
     }
 
@@ -39,7 +39,8 @@ const Loginsignup = (props) => {
       // console.log((Username).toString()) testing 
       // console.log(SHA256 (password).toString()) testing
 
-      console.log({"usernameCheck": Username === data.Username, "passwordCheck": data.EncryptedPassword === SHA256(password).toString(), "incorrectCountNumbLT3": data.incorrectCountNumb < 3, "incorrectCountNUmbGT3AndLastAttemptLongerThan5minsago": data.incorrectCountNumb >= 3 && getDate5MinsAgo() > new Date(data.lastAttemptTime) })
+      console.log({"usernameCheck": Username === data.Username, "passwordCheck": data.EncryptedPassword === SHA256(password).toString(), "incorrectCountNumbLT3": data.incorrectCountNumb < 3, "incorrectCountNUmbGT3AndLastAttemptLongerThan5minsago": data.incorrectCountNumb >= 3 && getDate5MinsAgo() 
+      > new Date(data.lastAttemptTime) })
 
       if ( Username === data.Username  && data.EncryptedPassword === SHA256(password).toString() && (data.incorrectCountNumb < 3 || data.incorrectCountNumb >= 3 && getDate5MinsAgo() > new Date(data.lastAttemptTime))) {
         setDoc(docRef, {
@@ -65,11 +66,7 @@ const Loginsignup = (props) => {
     } else {
       console.log("User doesn't exist")
     }
-
-
-
   }
-
 
   return (
     <div className={styles['container']}>
@@ -103,7 +100,7 @@ const Loginsignup = (props) => {
               className={` ${styles['button']} ${projectStyles['button']} `}
               onClick={() => login(Email, Password)}      // creating method that takes in 0 arguments, thats why we got empty brackets
             >
-              Button
+              Sign in
             </button>
           </div>
 

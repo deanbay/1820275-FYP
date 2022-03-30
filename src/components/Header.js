@@ -14,19 +14,19 @@ export default function Header() {
                 <h1 className={styles['Logo']}>Ideally</h1>
             </Link>
             <div className={styles['Nav']}>
-                <a href="#main-section" className={styles['link']}>
+                <a href="" className={styles['link']}>
                     <SolidButton
                         button="Home"
                         rootClassName="rootClassName9"
                     ></SolidButton>
                 </a>
-                <a href="#main-section" className={styles['link01']}>
+                <a href="" className={styles['link01']}>
                     <SolidButton
                         button="About"
                         rootClassName="rootClassName10"
                     ></SolidButton>
                 </a>
-                <a href="#main-section" className={styles['link02']}>
+                <a href="" className={styles['link02']}>
                     <SolidButton
                         button="Ideas"
                         rootClassName="rootClassName8"

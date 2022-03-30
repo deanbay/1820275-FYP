@@ -9,9 +9,6 @@ import { getFirestore,collection,getDocs } from 'firebase/firestore'
 import Loginsignup from './loginsignup';
 import Footer from './components/Footer';
 
-
-
-//import { Helmet } from 'react-helmet'
 const otherAppConfig = {
   databaseURL: "fyp1-78231 europe-west6.firebasedatabase.app", 
   apiKey: "AIzaSyAA9xr8geeF9PVznNk-9CoVWO21p78gYyw",
@@ -24,22 +21,8 @@ const otherAppConfig = {
 }
 
   const otherApp = initializeApp(otherAppConfig, "FYP1");console.log(otherApp.name); 
-
-
- 
   export const db = getFirestore(otherApp);
   
-
-    async function getCities(db) { //get to renaming another timee
-    const ExampleCol = collection(db, 'Users');
-    const ExampleSnapshot = await getDocs(ExampleCol);
-    const ExampleList = ExampleSnapshot.docs.map(doc => doc.data());
-    console.log({cityList: ExampleList})
-    return ExampleList;
-  }
-  
-  console.log(getCities(db))
-
 function App() {
 
   return (

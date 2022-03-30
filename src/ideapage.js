@@ -10,11 +10,13 @@ import styles from './ideapage.module.css';
 import IdeaArea from './components/idea-area'
 import ContributionArea from './components/contributionarea'
 
+
+
 const Ideapage = (props) => {
   return (
     <div className={styles['container']}>
       <Helmet>
-        <title>Idea page - Idealy</title>
+        <title>Idea page - Ideally</title>
         <meta property="og:title" content="Idea page - Idealy" />
       </Helmet>
       <div id="main-section" className={styles['Main']}>
@@ -25,6 +27,7 @@ const Ideapage = (props) => {
               rootClassName="rootClassName3"
             ></IdeaCard>
             <ContributionArea></ContributionArea>
+          
           </div>
           
           
