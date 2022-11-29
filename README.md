@@ -1,5 +1,7 @@
 Final Year Project By Dean Baythoon
 
+aimied to create a idea/project managment application with statistacal display of inputs  
+
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
